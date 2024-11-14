@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="../styles/img/Home.png" width="20">
+    </nav>
+
+
+    <div id="chatbot-container">
+        <div id="chat-header">
+            Chatbot
+            <a id="close-chat" onclick="closeChat()"><img src="../styles/img/close.png" ></a> <!-- Botón de cerrar -->
+        </div>
+        <div id="chat-content">
+            <div class="message bot">
+                <div class="icon">🤖</div>
+                <div class="text">Hola 👋 ¿Cómo puedo ayudarte hoy?</div>
+            </div>
+            <div id="options-menu">
+                
+                <button onclick="handleOption('Obtener Tickets')">Obtener Tickets</button>
+                <button onclick="handleOption('Consulta SD')">Consulta SD</button>
+                <button onclick="handleOption('Crear IM')">Crear IM</button>
+                <button onclick="handleOption('Menú Principal')">Menú Principal</button>
+                <button onclick="handleOption('Consulta Requerimientos')">Consulta Requerimientos</button>
+                <button onclick="handleOption('Crear Requerimiento')">Crear Requerimiento</button>
+                <button onclick="handleOption('Contáctenos')">Contáctenos</button>
+                <button onclick="handleOption('Ejecución de parámetros')">Ejecución de parámetros</button>
+            </div>
+        </div>
+        <div id="chat-input">
+            <input type="text" id="user-input" placeholder="Escribe un mensaje..." onkeypress="handleUserInput(event)">
+            <button id="send-button" onclick="sendMessage()">
+                📤 <!-- Puedes reemplazar este emoji con un icono de tu elección -->
+            </button>
+        </div>
+        
+    </div>
+
+    <!-- Botón flotante para abrir el chatbot -->
+    <button id="chat-toggle" onclick="toggleChat()">💬</button>
+
+    <script src="../Models/chat.js"></script>
+</body>
+</html>
