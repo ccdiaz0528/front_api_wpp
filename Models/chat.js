@@ -12,11 +12,7 @@ function toggleChat() {
     }
 }
 
-function handleOption(optionText) {
-    addMessage('user', optionText);
-    const botResponse = `Has seleccionado ${optionText}`;
-    setTimeout(() => addMessage('bot', botResponse), 500);
-}
+
 
 function addMessage(sender, text) {
     const chatContent = document.getElementById('chat-content');
@@ -88,3 +84,76 @@ function sendMessage() {
     }
 }
 
+function handleOption(optionText) {
+    addMessage('user', optionText);
+
+    switch (optionText) {
+        case 'Obtener Tickets':
+            obtenerTickets();
+            break;
+        case 'Consulta SD':
+            consultaSD();
+            break;
+        case 'Crear IM':
+            crearIM();
+            break;
+        case 'Menú Principal':
+            menuPrincipal();
+            break;
+        case 'Consulta Requerimientos':
+            consultaRequerimientos();
+            break;
+        case 'Crear Requerimiento':
+            crearRequerimiento();
+            break;
+        case 'Contáctenos':
+            contactenos();
+            break;
+        case 'Ejecución de parámetros':
+            ejecucionParametros();
+            break;
+        default:
+            addMessage('bot', 'Opción no reconocida');
+    }
+}
+
+
+function obtenerTickets() {
+    // Aquí se realizará la llamada al endpoint para obtener tickets
+    addMessage('bot', 'Simulación: Aquí se mostrarán los tickets disponibles.');
+}
+
+function consultaSD() {
+    // Aquí se realizará la llamada al endpoint para consultar SD
+    addMessage('bot', 'Simulación: Consulta de SD en proceso.');
+}
+
+function crearIM() {
+    // Aquí se realizará la llamada al endpoint para crear un IM
+    addMessage('bot', 'Simulación: Creación de IM en proceso.');
+}
+
+function menuPrincipal() {
+    // Aquí se puede agregar lógica para mostrar el menú principal o reiniciar el chat
+    addMessage('bot', 'Mostrando el menú principal.');
+}
+
+function consultaRequerimientos() {
+    // Aquí se realizará la llamada al endpoint para consultar requerimientos
+    addMessage('bot', 'Simulación: Consulta de requerimientos en proceso.');
+}
+
+function crearRequerimiento() {
+    // Aquí se realizará la llamada al endpoint para crear un requerimiento
+    addMessage('bot', 'Simulación: Creación de requerimiento en proceso.');
+}
+
+function contactenos() {
+    // Aquí se realizará la llamada al endpoint para obtener información de contacto
+    addMessage('bot', 'Simulación: Información de contacto.');
+}
+
+function ejecucionParametros() {
+    // Aquí se realizará la llamada al endpoint para ejecutar parámetros
+    addMessage('bot', 'Simulación: Ejecución de parámetros.');
+}
